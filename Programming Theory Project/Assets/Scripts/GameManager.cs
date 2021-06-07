@@ -9,29 +9,29 @@ using UnityEditor;
 
 public class GameManager : MonoBehaviour
 {
-    private int m_SceneNumber = 1;
-    public int sceneNumber
-    { 
-        get { return m_SceneNumber; }
-        set 
-        {
-            if (value < 0.0f)
-            {
-                Debug.LogError("You can't set a negative scene number!");
-            }
-            else
-            {
+    private int m_SceneNumber = 1;// ENCAPSULATION
+    public int sceneNumber//
+    { //
+        get { return m_SceneNumber; }//
+        set //
+        {//
+            if (value < 0.0f)//
+            {//
+                Debug.LogError("You can't set a negative scene number!");//
+            }//
+            else//
+            {//
                 m_SceneNumber = value; // original setter now in if/else statement
-            }
-        }
-    }
+            }//
+        }//
+    }//
 
-    public void StartGame()
+    public void StartGame()// ABSTRACTION
     {
         SceneManager.LoadScene(m_SceneNumber);
     }
 
-    public void QuitGame()
+    public void QuitGame()// ABSTRACTION
     {
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
